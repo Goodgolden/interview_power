@@ -1,5 +1,5 @@
 ---
-title: "Homework1 due date April 10, 2026"
+title: "Hands-on Exercise: Power and Sample Size Analysis"
 date: "2026-03-27"
 output:
   pdf_document: default
@@ -47,8 +47,9 @@ To help plan the main study, a pilot study is conducted where echocardiograms ar
 
 ## Table 1: Pilot data on left ventricular mass (LVM)
 
+
 | ID | Baseline LVM (g) | 4-year LVM (g) | Change (g) |
-|-||-||
+|----|------------------|----------------|------------|
 | 1  | 139              | 163            | 24         |
 | 2  | 134              | 126            | -8         |
 | 3  | 86               | 142            | 56         |
@@ -59,16 +60,8 @@ To help plan the main study, a pilot study is conducted where echocardiograms ar
 | 8  | 73               | 82             | 9          |
 | 9  | 93               | 77             | -16        |
 | 10 | 162              | 172            | 10         |
-
-**Summary:**
-
-- Mean (Baseline): 105.5  
-- Mean (4-year): 124.4  
-- Mean (Change): 18.9  
-
-- SD (Baseline): 29.4  
-- SD (4-year): 35.2  
-- SD (Change): 26.4  
+| Mean | 105.5           | 124.4          | 18.9       |
+|SD  | 29.4             | 35.2           | 26.4       |
 
 > *Change = 4-year LVM - baseline LVM*
 
@@ -167,7 +160,7 @@ For a one-sample $t$-test with unknown variance and a two-sided alternative, wri
 
 ## Question 3.5
 
-Using the Eastern Asia example ($\mu_0 = 120$, $\mu_1 = 105$, $s \approx \sigma = 24$, $n = 100$, $\alpha = 0.05$), consider the problem of power calculation.
+Using the Eastern Asia example ($\bar x_0 = \mu_0 = 120$, $\bar x_1 = \mu_1 = 105$, $s \approx \sigma = 24$, $n = 100$, $\alpha = 0.05$), consider the problem of power calculation.
 
 First, assume that the population standard deviation $\sigma$ is known. Under this assumption, write down the power function for a one-tailed Z-test and compute the corresponding power. Next, consider the two-tailed Z-test and describe how the rejection region changes, and how this affects the power.
 
@@ -179,7 +172,7 @@ Finally, briefly compare the power of one-tailed versus two-tailed tests, and Z-
 
 # Question 4: Simulation
 
-In many practical situations, analytic formulas for power may be difficult to derive or may rely on assumptions that are not fully satisfied. As a result, simulation-based approaches are often used to approximate power and to study how design parameters such as sample size and significance level affect the performance of statistical tests.
+In many practical situations, analytic formulas for power may be difficult to derive or may rely on assumptions that are not fully satisfied. As a result, simulation-based approaches are often used to approximate power and to study how design parameters such as sample size and significance level affect the performance of statistical tests. You can use the R codes from in the Repository R folder to implement the simulations.
 
 Consider again the obstetrics example described in Question 3. Suppose that the null hypothesis is
 $$
@@ -214,3 +207,50 @@ Using the same parameter settings, estimate the power and compare it with the on
 (e) Based on your results, determine the minimum sample size required to achieve at least 80\% power at $\alpha = 0.05$ for detecting a difference between 120 oz and 105 oz.
 
 You may implement the simulation in R by repeatedly generating samples from a normal distribution and computing the proportion of times the null hypothesis is rejected. Alternatively, you may use G*Power to obtain corresponding power and sample size estimates.
+
+\newpage
+
+# Randy's but mainly Gray Grunwald's Summary
+
+## The process
+
+Information that must be determined:
+
+- Design features
+  - Independent or repeated measurements, groups, covariates, etc.
+  
+  - Outcome, especially type (numerical, binary, …)
+  
+  - Comparisons of interest (e.g. difference, interaction, …)
+
+- Numerical values
+
+  - Difference to be detected or proposed sample size
+  
+  - Appropriate SD (or proportion if binary) for comparison of interest
+
+## My steps:
+
+1. Carefully define the question (outcome, comparisons, etc.) as a hypothesis.  See Chapter 1A.
+
+2. Determine a good statistical analysis for the future data.
+
+3. Simplify the analysis if a full power analysis isn’t viable (e.g. some preliminary values not known).
+
+4. Obtain necessary quantities (e.g., SDs, clinical differences).
+
+5. Calculate power, sample size or detectable difference, often for a range of the others.
+
+6. Get investigator response.
+
+7. Return to 1-6 above as necessary.
+
+8. Write it in grant proposal format.
+
+## Final comments (Gary Grunwald's opinions):
+
+- Statistical power and sample size analysis cannot generally give very precise results.
+
+- Power analyses sometimes don’t really give much information at all, particularly when little is known about the future situation (eg, standard deviations, detectable differences).  Then investigators need to rely on other scientific/biological arguments to decide if the study has a reasonable chance of success.  (They may still need a formal sample size calculation for a proposal.)
+
+- Keep it simple.
