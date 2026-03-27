@@ -1,0 +1,216 @@
+---
+title: "Homework1 due date April 10, 2026"
+date: "2026-03-27"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Questions 1 Review
+
+## Question 1.1 
+What is the difference between a type I and type II error?
+
+## Question 1.2 
+What is the difference between the critical-value method and the p-value method of hypothesis testing?
+
+## Question 1.3 
+Several studies have shown that women with many children are less likely to get
+ovarian cancer. In a new study, data are collected from 25 women ages 40-49 with
+ovarian cancer. The mean parity (number of children) of these women is 1.8 with
+standard deviation 1.2. Suppose the mean number of children among women in the
+general population in this age group is 2.5.
+
+(a) What test can be used to test the hypothesis that women with ovarian cancer
+have fewer children than women in the general population in the same age
+group?
+
+(b) Perform the test using the critical-value method.
+
+(c) What is the p-value based on the test?
+
+(d) What do you conclude from this study?
+
+\newpage
+
+
+# Quesion 2: Cardiovascular Disease, Pediatrics
+
+Left ventricular mass (LVM) is an important risk factor for subsequent cardiovascular disease. A study is proposed to assess the relationship between childhood blood pressure levels and LVM in children as determined from echocardiograms. The goal is to stratify children into a normal bp group (< 80th percentile for their age, gender, and height) and an elevated bp group ($\geq$ 90th percentile for their age, gender, and height) and compare change in LVM between the 2 groups. Before this can be done, one needs to demonstrate that LVM actually changes in children over a 4-year period.
+
+To help plan the main study, a pilot study is conducted where echocardiograms are obtained from 10 random children from the Bogalusa Heart Study at baseline and after 4 years of follow-up. The data are given in Table 1
+
+
+
+## Table 1: Pilot data on left ventricular mass (LVM)
+
+| ID | Baseline LVM (g) | 4-year LVM (g) | Change (g) |
+|-||-||
+| 1  | 139              | 163            | 24         |
+| 2  | 134              | 126            | -8         |
+| 3  | 86               | 142            | 56         |
+| 4  | 98               | 96             | -2         |
+| 5  | 78               | 111            | 33         |
+| 6  | 90               | 108            | 18         |
+| 7  | 102              | 167            | 65         |
+| 8  | 73               | 82             | 9          |
+| 9  | 93               | 77             | -16        |
+| 10 | 162              | 172            | 10         |
+
+**Summary:**
+
+- Mean (Baseline): 105.5  
+- Mean (4-year): 124.4  
+- Mean (Change): 18.9  
+
+- SD (Baseline): 29.4  
+- SD (4-year): 35.2  
+- SD (Change): 26.4  
+
+> *Change = 4-year LVM - baseline LVM*
+
+## Question 2.1
+What test can be used to assess if there is a change in mean LVM over 4 years?
+
+## Question 2.2
+Implement the test and provide a two-tailed *p*-value.
+
+
+## Question 2.3
+Provide a 95% confidence interval for the change in LVM over 4 years based on the data in Table 1.
+
+
+## Question 2.4
+Since this was a pilot study, the main question of interest is how many subjects would be needed to detect an increase of 10 g in mean LVM over 4 years using a two-sided test with $\alpha$ = 0.05 and power = 80\%.
+
+
+## Question 2.5
+
+In a longitudinal study with repeated measurements over time, some subjects may be lost to follow-up or have missing observations at certain time points.
+
+Briefly discuss how this would affect statistical power and sample size calculation. How would you adjust the planned sample size to account for this issue?
+
+
+*Hint: Assume that the estimated variance of change in LVM in the pilot study is the true variance of change in LVM.*
+
+\newpage
+
+# Question 3: Obstetrics
+
+In the lecture, we have seen the **Example (Obstetrics)**. Suppose we want to test the hypothesis that mothers with low socio-economic status (SES) deliver babies whose birthweights are lower than “normal.” To test this hypothesis, a list is obtained of birthweights from 100 consecutive, full-term, live-born deliveries from the maternity ward of a hospital in a low-SES area. The mean birthweight ($\bar{x}$) is found to be 115 oz with a sample standard deviation ($s$) of 24 oz. Suppose we know from surveys based on 100 deliveries from a high-SES area that the mean birthweight in the United States is 120 oz.
+
+In the lecture, the alternative hypothesis was assumed to be in a specific direction relative to the null hypothesis. In particular, we considered a one-sample $t$-test of the form
+\[
+H_0: \mu = \mu_0 \quad \text{vs.} \quad H_1: \mu < \mu_0,
+\]
+which assumes that the mean birthweight of infants from a low-SES-area hospital is either the same as or lower than average. Under this framework, we also studied the power of a one-tailed test.
+
+However, in many real applications, prior knowledge about the direction of the effect may not be available. If the null hypothesis is not true, then we may not know whether the true mean is larger or smaller than $\mu_0$.
+
+Suppose now that in a new study conducted in Eastern Asia, the mean birthweight is found to be 105 oz with a sample standard deviation ($s$) of 24 oz. Using this new scenario, answer the following questions.
+
+
+
+## Question 3.1
+
+(a) Provide a hand-drawn sketch illustrating the original hypothesis from the lecture (one-tailed, left-sided test). Clearly label the critical value, the acceptance region, the rejection region, and the power region.
+
+(b) Based on the new Eastern Asia example, discuss whether the hypothesis used in the lecture is still appropriate. Write down a suitable null and alternative hypothesis for this new setting and explain your reasoning.
+
+(c) Provide a hand-drawn sketch corresponding to your new hypothesis, assuming a one-sample $t$-test with a left-tailed alternative.
+
+
+
+## Question 3.2
+
+A two-tailed test allows the alternative hypothesis to include values both greater than and less than the null mean. In this setting, the decision rule is based on whether the test statistic falls in either tail of the distribution.
+
+Provide a hand-drawn sketch of a two-tailed test for this example. Clearly label the critical values, the acceptance region, the rejection regions, and the corresponding power regions.
+
+
+
+## Question 3.3
+
+For a two-tailed test, the null hypothesis is rejected if the test statistic $t$ is either less than a lower critical value $c_1$ or greater than an upper critical value $c_2$. That is, we reject $H_0$ if $t < c_1$ or $t > c_2$, and accept $H_0$ if $c_1 \leq t \leq c_2$.
+
+Write down expressions for:
+
+(1) The probability of a Type I error:
+\[
+\Pr(\text{reject } H_0 \mid H_0 \text{ true})
+\]
+
+(2) The power function:
+\[
+\Pr(\text{reject } H_0 \mid \mu = \mu_1)
+\]
+
+You may use the following template:
+\[
+\begin{aligned}
+\Pr(\text{reject } H_0 \mid H_0 \text{ true})
+&= \Pr(t < c_1 \text{ or } t > c_2 \mid H_0 \text{ true}) \\
+&= \Pr(t < c_1 \mid H_0 \text{ true}) 
++ \Pr(t > c_2 \mid H_0 \text{ true}) \\
+&= \alpha.
+\end{aligned}
+\]
+
+
+
+## Question 3.4
+
+For a one-sample $t$-test with unknown variance and a two-sided alternative, write down the test statistic used for testing the mean. Specify the degrees of freedom and the rejection rule.
+
+## Question 3.5
+
+Using the Eastern Asia example ($\mu_0 = 120$, $\mu_1 = 105$, $s \approx \sigma = 24$, $n = 100$, $\alpha = 0.05$), consider the problem of power calculation.
+
+First, assume that the population standard deviation $\sigma$ is known. Under this assumption, write down the power function for a one-tailed Z-test and compute the corresponding power. Next, consider the two-tailed Z-test and describe how the rejection region changes, and how this affects the power.
+
+Now assume that $\sigma$ is unknown and a one-sample $t$-test is used instead. Write down the corresponding test statistic and discuss how the use of the $t$ distribution (instead of the normal distribution) affects the power, especially for finite sample sizes.
+
+Finally, briefly compare the power of one-tailed versus two-tailed tests, and Z-tests versus $t$-tests, and comment on the role of sample size in determining power.
+
+\newpage
+
+# Question 4: Simulation
+
+In many practical situations, analytic formulas for power may be difficult to derive or may rely on assumptions that are not fully satisfied. As a result, simulation-based approaches are often used to approximate power and to study how design parameters such as sample size and significance level affect the performance of statistical tests.
+
+Consider again the obstetrics example described in Question 3. Suppose that the null hypothesis is
+$$
+H_0: \mu = 120,
+$$
+
+and that the true mean birthweight in a low-SES population is $\mu_1 = 105$ oz. Assume that the population standard deviation is approximately $\sigma = 24$ oz.
+
+We are interested in understanding how well a statistical test can detect this difference under various conditions.
+
+First, consider a one-sample test of
+
+$$
+H_0: \mu = 120 \quad \text{vs.} \quad H_1: \mu < 120.
+$$
+
+(a) For a fixed significance level $\alpha = 0.05$, use simulation (in R) or software such as G*Power to estimate the power of the test for different sample sizes (for example, $n = 20, 50, 100, 200$). Describe how the estimated power changes as the sample size increases.
+
+(b) Fix the sample size at $n = 100$. Vary the significance level (for example, $\alpha = 0.01, 0.05, 0.10$) and estimate the corresponding power. Explain how the choice of $\alpha$ affects the probability of rejecting the null hypothesis.
+
+(c) Repeat parts (a) and (b) using both a Z-test (assuming $\sigma$ is known) and a one-sample $t$-test (assuming $\sigma$ is unknown). Compare the estimated power between the two approaches and comment on any differences you observe.
+
+(d) Now consider a two-tailed test of the form
+
+$$
+H_0: \mu = 120 \quad \text{vs.} \quad H_1: \mu \neq 120.
+$$
+
+
+Using the same parameter settings, estimate the power and compare it with the one-tailed test. Explain why the power differs between these two testing procedures.
+
+(e) Based on your results, determine the minimum sample size required to achieve at least 80\% power at $\alpha = 0.05$ for detecting a difference between 120 oz and 105 oz.
+
+You may implement the simulation in R by repeatedly generating samples from a normal distribution and computing the proportion of times the null hypothesis is rejected. Alternatively, you may use G*Power to obtain corresponding power and sample size estimates.
